@@ -1,0 +1,26 @@
+.container {
+    margin: 10px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.tabs-button {
+    padding: 15px;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: blueviolet;
+    background-color: transparent;
+    margin-right: 10px;
+}
+
+.tabs-button.active {
+    color: rgb(239, 13, 205);
+    border-bottom: 1px solid blueviolet;
+}
+
+.tabs-button:hover {
+    border-bottom: 1px solid blueviolet;
+}
