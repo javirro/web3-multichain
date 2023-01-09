@@ -4,6 +4,6 @@ export interface TransactionInfo {
   blockHash: string | null
   value: string | null
   gasPrice: string | null
-  gas: Number | null
+  gas: number | null
   input: string | null
 }
