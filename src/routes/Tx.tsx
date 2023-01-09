@@ -1,3 +1,4 @@
+import GetTransaction from '../components/Tx/GetTransaction'
 import '../styles/general.css'
 import { useState } from 'react'
 
@@ -20,6 +21,10 @@ const Tx = () => {
           Get transaction number from address
         </button>
       </div>
+
+      <section>
+        <GetTransaction />
+      </section>
 
     </div>
   )

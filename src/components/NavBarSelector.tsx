@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { changeChain } from '../store/chainSlice'
 const NavBarSelector = () => {
-
   const chain: string = useSelector((s: any) => s.chain)
   const dispatch = useDispatch()
 
