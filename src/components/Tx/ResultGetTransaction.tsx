@@ -1,11 +1,12 @@
 import { TransactionInfo } from '../../utils/types'
+import '../../styles/tableResult.css'
 interface ResultGetTransactionProps {
   result: TransactionInfo
 }
 const ResultGetTransaction = ({ result }: ResultGetTransactionProps) => {
   return (
-    <div>
-      <table>
+    <div className='result-table-container'>
+      <table className='result-table'>
         <thead>
           <tr>
             <th>Data</th>
@@ -14,28 +15,28 @@ const ResultGetTransaction = ({ result }: ResultGetTransactionProps) => {
         </thead>
         <tbody>
           <tr>
-            <td>Block hash</td>
-            <td>{result?.blockHash}</td>
+            <td className="table-left-column">Block hash</td>
+            <td className="table-value">{result?.blockHash}</td>
           </tr>
           <tr>
-            <td>Nonce</td>
-            <td>{result?.nonce}</td>
+            <td className="table-left-column">Nonce</td>
+            <td className="table-value">{result?.nonce}</td>
           </tr>
           <tr>
-            <td>Block Number</td>
-            <td>{result?.blockNumber}</td>
+            <td className="table-left-column">Block Number</td>
+            <td className="table-value">{result?.blockNumber}</td>
           </tr>
           <tr>
-            <td>Value </td>
-            <td>{result?.value}</td>
+            <td className="table-left-column">Value </td>
+            <td className="table-value">{result?.value}</td>
           </tr>
           <tr>
-            <td>Gas price </td>
-            <td>{result?.gasPrice}</td>
+            <td className="table-left-column">Gas price </td>
+            <td className="table-value">{result?.gasPrice}</td>
           </tr>
           <tr>
-            <td>Gas </td>
-            <td>{result?.gas}</td>
+            <td className="table-left-column">Gas </td>
+            <td className="table-value">{result?.gas}</td>
           </tr>
         </tbody>
       </table>

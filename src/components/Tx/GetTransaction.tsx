@@ -1,11 +1,11 @@
-import { useSelector } from 'react-redux'
+
 import { createWeb3Instance } from '../../blockchain/web3'
-import '../../styles/tx.css'
 import { useState } from 'react'
-import { rpcs } from '../../blockchain/rpcs'
 import ResultGetTransaction from './ResultGetTransaction'
 import { TransactionInfo } from '../../utils/types'
 
+import '../../styles/tx.css'
+import { useRPC } from '../../hooks/useRPC'
 // 0xe40a93fb7640943d31d2d2021b4ac96a0b7d8266228d139a4c195768741e63f5
 const GetTransaction = () => {
   const [txHash, setTxHash] = useState<string>('')
@@ -18,18 +18,12 @@ const GetTransaction = () => {
     input: '',
     gas: null,
   })
-  const chain: string = useSelector((s: any) => s.chain)
 
-  let rpc: string = rpcs.ftm
-  if (chain === 'eth') rpc = rpcs.eth
-  else if (chain === 'bnb') rpc = rpcs.bnb
-  else if (chain === 'polygon') rpc = rpcs.polygon
-
+  const rpc: string = useRPC()
   const web3 = createWeb3Instance(rpc)
 
-  const txInputHandler = (ev: any) => {
-    setTxHash(ev.target.value)
-  }
+  const txInputHandler = (ev: any) => setTxHash(ev.target.value)
+
 
   const handleSearch = async () => {
     setTxResult({
@@ -71,9 +65,9 @@ const GetTransaction = () => {
           Search{' '}
         </button>
       </div>
-      <article>
+      {txResult.blockNumber !== null && <article>
         <ResultGetTransaction result={txResult} />
-      </article>
+      </article> }
     </div>
   )
 }
