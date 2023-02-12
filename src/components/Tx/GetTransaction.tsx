@@ -3,9 +3,8 @@ import { createWeb3Instance } from '../../blockchain/web3'
 import { useState } from 'react'
 import ResultGetTransaction from './ResultGetTransaction'
 import { TransactionInfo } from '../../utils/types'
-
-import '../../styles/tx.css'
 import { useRPC } from '../../hooks/useRPC'
+import '../../styles/tx.css'
 // 0xe40a93fb7640943d31d2d2021b4ac96a0b7d8266228d139a4c195768741e63f5
 const GetTransaction = () => {
   const [txHash, setTxHash] = useState<string>('')

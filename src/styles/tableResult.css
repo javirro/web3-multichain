@@ -1,0 +1,45 @@
+.result-table-container {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.result-table {
+    padding: 15px;
+    border-collapse: collapse;
+    border-radius: 5px;
+    border-radius: 1em;
+}
+
+th,
+tr,
+td {
+    padding: 15px;
+    border-collapse: collapse;
+    border-bottom: 1px solid rgb(51, 1, 48);
+    font-size: 18px;
+}
+
+th {
+    background-color: rgb(69, 0, 133);
+    color: rgb(234, 130, 255);
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+tr:nth-child(even) {
+    background: rgb(234, 130, 255)
+}
+
+tr:nth-child(odd) {
+    background: rgb(254, 250, 255)
+}
+
+.table-value {
+    text-align: end;
+}
+
+.table-left-column {
+    font-weight: bold;
+}
