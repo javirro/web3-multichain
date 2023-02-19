@@ -5,6 +5,7 @@ interface ResultGetBlockProps {
   blockInfo: BlockInfo
 }
 const ResultGetBlock = ({ blockInfo }: ResultGetBlockProps) => {
+  const timestampUTC = new Date((blockInfo?.timestamp as number *1000) );
   return (
     <div className='result-table-container'>
       <table className='result-table'>
@@ -24,16 +25,20 @@ const ResultGetBlock = ({ blockInfo }: ResultGetBlockProps) => {
             <td className="table-value">{blockInfo?.timestamp}</td>
           </tr>
           <tr>
+            <td className="table-left-column">Timestamp UTC </td>
+            <td className="table-value">{timestampUTC.toUTCString()}</td>
+          </tr>
+          <tr>
             <td className="table-left-column">Block Hash</td>
             <td className="table-value">{blockInfo?.hash}</td>
           </tr>
           <tr>
             <td className="table-left-column">Gas limit </td>
-            <td className="table-value">{blockInfo?.gasLimit}</td>
+            <td className="table-value">{blockInfo?.gasLimit} WEI</td>
           </tr>
           <tr>
-            <td className="table-left-column">Gas used </td>
-            <td className="table-value">{blockInfo?.gasUsed}</td>
+            <td className="table-left-column">Gas used  </td>
+            <td className="table-value">{blockInfo?.gasUsed} WEI</td>
           </tr>
           <tr>
             <td className="table-left-column">Nonce</td>

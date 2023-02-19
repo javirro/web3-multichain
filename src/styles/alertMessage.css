@@ -1,0 +1,14 @@
+.modal-alert-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 30%;
+    top: 30%;
+    width: 800px;
+    height: 300px;
+}
+
+.modal-alert-content {
+    padding: 20px;
+}

@@ -21,3 +21,5 @@ export interface BlockInfo {
   gasUsed: number | null
 
 }
+
+export type  ErrorMessages = 'BigBlockNumber' | "NoTransaction"
